@@ -1,11 +1,52 @@
 
-  # Power Platform Developer Portfolio
+# 🧑‍💻 Busayo Samuel — Portfolio
 
-  This is a code bundle for Power Platform Developer Portfolio. The original project is available at https://www.figma.com/design/T4CS5PHeyBHMfJad0BHQpV/Power-Platform-Developer-Portfolio.
+A personal developer portfolio built with **React + Vite + TailwindCSS**.
+It showcases my work as a **Power Apps Developer** and **Microsoft Certified Professional**.
 
-  ## Running the code
+---
 
-  Run `npm i` to install the dependencies.
+## 🚀 Tech Stack
 
-  Run `npm run dev` to start the development server.
-  
+- **Framework:** React (Vite)
+- **Styling:** TailwindCSS + ShadCN UI
+- **Icons:** Lucide React
+- **PDF Generation:** jsPDF
+- **Deployment:** GitHub Pages
+
+---
+
+## ✨ Features
+
+- Responsive and modern UI
+- Interactive project cards with video/image previews
+- Downloadable **PDF Resume**
+- Smooth animations and transitions
+- Dark/light mode support
+- Easy-to-update content structure
+
+---
+
+## 🧩 Folder Structure
+
+```
+
+src/
+├── components/       # Reusable UI components
+├── pages/            # Main pages (Home, Resume, Projects, Contact)
+├── assets/           # Images, icons, and media files
+├── data/             # JSON files for project and skill info
+├── App.jsx           # Main App component
+└── main.jsx          # Entry point
+
+````
+
+
+
+## 📄 Resume Download
+
+The portfolio includes a **Download Resume** button powered by `jsPDF`.
+Clicking the button automatically generates and downloads a styled PDF version of your resume.
+
+---
+
