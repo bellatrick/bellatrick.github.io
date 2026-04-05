@@ -1,13 +1,14 @@
 import { User, FolderOpen, FileText, BookOpen, X, Award } from 'lucide-react';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 interface SidebarProps {
-  activePage: string;
-  onPageChange: (page: string) => void;
   isOpen: boolean;
   onClose: () => void;
 }
 
-export function Sidebar({ activePage, onPageChange, isOpen, onClose }: SidebarProps) {
+export function Sidebar({ isOpen, onClose }: SidebarProps) {
+  const navigate = useNavigate();
+  const location = useLocation();
   const menuItems = [
     { id: 'profile', label: 'Profile', icon: User },
     { id: 'projects', label: 'Projects', icon: FolderOpen },
@@ -17,7 +18,7 @@ export function Sidebar({ activePage, onPageChange, isOpen, onClose }: SidebarPr
   ];
 
   const handlePageChange = (page: string) => {
-    onPageChange(page);
+    navigate(`/${page}`);
     // Close sidebar on mobile after selection
     if (window.innerWidth < 768) {
       onClose();
@@ -60,7 +61,7 @@ export function Sidebar({ activePage, onPageChange, isOpen, onClose }: SidebarPr
         <nav className="py-2">
           {menuItems.map((item) => {
             const Icon = item.icon;
-            const isActive = activePage === item.id;
+            const isActive = location.pathname.startsWith(`/${item.id}`);
 
             return (
               <button

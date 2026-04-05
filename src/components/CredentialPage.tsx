@@ -13,6 +13,17 @@ import { Card } from './ui/card';
 import { ToggleGroup, ToggleGroupItem } from './ui/toggle-group';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 
+// @ts-ignore: import of media asset without type declaration
+import pl400 from '../assets/pl-400.png';
+// @ts-ignore: import of media asset without type declaration
+import pl200 from '../assets/pl-200.png';
+// @ts-ignore: import of media asset without type declaration
+import skills1 from '../assets/skills_1.png';
+// @ts-ignore: import of media asset without type declaration
+import skills2 from '../assets/skills_2.png';
+// @ts-ignore: import of media asset without type declaration
+import skills3 from '../assets/skills_3.png';
+
 interface Credential {
   id: string;
   name: string;
@@ -28,13 +39,31 @@ export function CredentialsPage() {
   const [viewMode, setViewMode] = useState<'table' | 'cards'>('cards');
 
   const credentials: Credential[] = [
+     {
+      id: '4',
+      name: 'PL-400 Microsoft Certified: Power Platform Developer Associate',
+      issuer: 'Microsoft',
+      date: '2026-01',
+      credentialUrl: 'https://www.linkedin.com/redir/redirect/?url=https%3A%2F%2Flearn.microsoft.com%2Fapi%2Fcredentials%2Fshare%2Fen-gb%2FBusayoSamuel-9633%2F6D4B986EAF07771%3FsharingId%3D68EAD34912F71127&urlhash=v2Ju&isSdui=true&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3BMNC0mf2DRAGuQLrBgpbCmg%3D%3D',
+      imageUrl: pl400,
+      category: 'Power Platform Developer',
+    },
+        {
+      id: '5',
+      name: 'PL-200 Microsoft Certified: Power Platform Functional Consultant Associate',
+      issuer: 'Microsoft',
+      date: '2026-03',
+      credentialUrl: 'https://www.linkedin.com/redir/redirect/?url=https%3A%2F%2Flearn.microsoft.com%2Fapi%2Fcredentials%2Fshare%2Fen-gb%2FBusayoSamuel-9633%2F6D4B986EAF07771%3FsharingId%3D68EAD34912F71127&urlhash=v2Ju&isSdui=true&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3BMNC0mf2DRAGuQLrBgpbCmg%3D%3D',
+      imageUrl: pl200,
+      category: 'Power Platform Functional Consultant',
+    },
     {
       id: '1',
       name: 'Microsoft Applied Skills: Create agents in Microsoft Copilot Studio',
       issuer: 'Microsoft',
       date: '2025-09',
       credentialUrl: 'https://www.linkedin.com/redir/redirect/?url=https%3A%2F%2Flearn.microsoft.com%2Fapi%2Fcredentials%2Fshare%2Fen-gb%2FBusayoSamuel-7256%2FD811C565158E8A88%3FsharingId%3D3B7071B304AF5E60&urlhash=LFA_&isSdui=true&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3BMNC0mf2DRAGuQLrBgpbCmg%3D%3D',
-      imageUrl: 'https://images.unsplash.com/photo-1613825787302-22acac0de2fc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjZXJ0aWZpY2F0ZSUyMGNyZWRlbnRpYWwlMjBiYWRnZXxlbnwxfHx8fDE3NjA4OTQ0Mjl8MA&ixlib=rb-4.1.0&q=80&w=1080',
+      imageUrl: skills1,
       category: 'Copilot Agents',
     },
     {
@@ -43,7 +72,7 @@ export function CredentialsPage() {
       issuer: 'Microsoft',
       date: '2025-09',
       credentialUrl: 'https://www.linkedin.com/redir/redirect/?url=https%3A%2F%2Flearn.microsoft.com%2Fapi%2Fcredentials%2Fshare%2Fen-gb%2FBusayoSamuel-7256%2FD811C565158E8A88%3FsharingId%3D3B7071B304AF5E60&urlhash=LFA_&isSdui=true&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3BMNC0mf2DRAGuQLrBgpbCmg%3D%3D',
-      imageUrl: 'https://images.unsplash.com/photo-1613825787302-22acac0de2fc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjZXJ0aWZpY2F0ZSUyMGNyZWRlbnRpYWwlMjBiYWRnZXxlbnwxfHx8fDE3NjA4OTQ0Mjl8MA&ixlib=rb-4.1.0&q=80&w=1080',
+      imageUrl: skills2,
       category: 'Dataverse',
     },
     {
@@ -52,9 +81,10 @@ export function CredentialsPage() {
       issuer: 'Microsoft',
       date: '2025-08',
       credentialUrl: 'https://www.linkedin.com/redir/redirect/?url=https%3A%2F%2Flearn.microsoft.com%2Fapi%2Fcredentials%2Fshare%2Fen-gb%2FBusayoSamuel-9633%2F6D4B986EAF07771%3FsharingId%3D68EAD34912F71127&urlhash=v2Ju&isSdui=true&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3BMNC0mf2DRAGuQLrBgpbCmg%3D%3D',
-      imageUrl: 'https://images.unsplash.com/photo-1613825787302-22acac0de2fc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjZXJ0aWZpY2F0ZSUyMGNyZWRlbnRpYWwlMjBiYWRnZXxlbnwxfHx8fDE3NjA4OTQ0Mjl8MA&ixlib=rb-4.1.0&q=80&w=1080',
+      imageUrl: skills3,
       category: 'Power Automate',
     },
+
 
   ];
 

@@ -25,6 +25,22 @@ import triage from '../assets/triage.mp4';
 import email_compart from '../assets/email_compart.mp4';
 // @ts-ignore: import of media asset without type declaration
 import docflow from '../assets/docflow.mp4';
+// @ts-ignore: import of media asset without type declaration
+import alm from '../assets/ALM github actions for solutions.mp4';
+// @ts-ignore: import of media asset without type declaration
+import bpf from '../assets/bpf.mp4';
+// @ts-ignore: import of media asset without type declaration
+import consent_tracker from '../assets/pa_consent_tracker.mp4';
+// @ts-ignore: import of media asset without type declaration
+import pcf_component from '../assets/pcf_component.mp4';
+// @ts-ignore: import of media asset without type declaration
+import purchase_order from '../assets/purchase_order_creation.mp4';
+// @ts-ignore: import of media asset without type declaration
+import role_hierarchy from '../assets/role_hierarchy.mp4';
+// @ts-ignore: import of media asset without type declaration
+import ribbon from '../assets/ribbon.mp4';
+// @ts-ignore: import of media asset without type declaration
+import email_notif_inventory from '../assets/email_notif_inventory.mp4';
 
 interface Project {
   id: string;
@@ -66,6 +82,70 @@ export function ProjectsPage() {
       date: '2024-10-05',
       platform: 'Power Automate',
       videoUrl: email_compart,
+    },
+     {
+      id: '4',
+      name: 'Github ALM for Power Platform',
+      description: 'Implementing ALM for Power Platform using Github',
+      date: '2024-12-15',
+      platform: 'Power Platform Solutions',
+      videoUrl:alm,
+    },
+        {
+      id: '5',
+      name: 'Business Process Flow',
+      description: 'Business Process Flow for managing opportunities creation in a pharmaceutical MDA',
+      date: '2024-12-15',
+      platform: 'Model Driven Apps',
+      videoUrl:bpf,
+    },
+    {
+      id: '6',
+      name: 'PCF Component',
+      description: 'PCF Component for managing Purchase Orders creation using a drag and drop component as an editable grid',
+      date: '2024-12-15',
+      platform: 'Model Driven Apps',
+      videoUrl:pcf_component,
+    },
+        {
+      id: '7',
+      name: 'Inventory Email notification',
+      description: 'A power automate flow created to send email notifications when inventory levels are low. The flow is triggered when the inventory level is below a certain threshold and sends an HTML formatted email notification to the inventory manager.',
+      date: '2024-12-15',
+      platform: 'Power Automate',
+      videoUrl:email_notif_inventory,
+    },
+        {
+      id: '8',
+      name: 'Microsft forms consent tracker',
+      description: 'A power automate flow to track consent from parents in a school environment. Parents can give consent by filling a microsoft form and the consent is tracked in a sharepoint list.',
+      date: '2024-12-15',
+      platform: 'Power Automate',
+      videoUrl:consent_tracker,
+    },
+        {
+      id: '9',
+      name: 'Purchase Order Creator',
+      description: 'A power automate flow to create purchase orders in a pharmaceutical MDA. It is a scheduled flow that triggers when the inventory levels are low and creates a purchase order to replenish the inventory.',
+      date: '2024-12-15',
+      platform: 'Power Automate',
+      videoUrl:purchase_order,
+    },
+    {
+      id: '10',
+      name: 'Role Hierarchy',
+      description: 'Demo show cases how role hierarchy works in a multi-BU enterprise for 6 users, 3 BUs and 5 security roles',
+      date: '2024-12-15',
+      platform: 'Power Platform',
+      videoUrl: role_hierarchy,
+    },
+        {
+      id: '11',
+      name: 'Ribbon Customization',
+      description: 'Showcases using the Ribbon Workbench to customize the ribbon of a model driven app and using Javascript and an instant power automate flow connected to the ribbon to speed up processes in a MDA',
+      date: '2024-12-15',
+      platform: 'Model Driven Apps',
+      videoUrl: ribbon,
     },
   ];
 
@@ -147,9 +227,9 @@ export function ProjectsPage() {
               <TableRow className="bg-[#faf9f8] dark:bg-[#323130] hover:bg-[#faf9f8] dark:hover:bg-[#323130]">
                 <TableHead className="text-gray-900 dark:text-white whitespace-nowrap">Name</TableHead>
                 <TableHead className="text-gray-900 dark:text-white hidden md:table-cell">Description</TableHead>
-                <TableHead className="text-gray-900 dark:text-white whitespace-nowrap">Date</TableHead>
+                {/* <TableHead className="text-gray-900 dark:text-white whitespace-nowrap">Date</TableHead> */}
                 <TableHead className="text-gray-900 dark:text-white whitespace-nowrap">Platform</TableHead>
-                <TableHead className="text-gray-900 dark:text-white whitespace-nowrap">GitHub</TableHead>
+                {/* <TableHead className="text-gray-900 dark:text-white whitespace-nowrap">GitHub</TableHead> */}
                 <TableHead className="text-gray-900 dark:text-white whitespace-nowrap">View</TableHead>
               </TableRow>
             </TableHeader>
@@ -171,15 +251,15 @@ export function ProjectsPage() {
                   <TableCell className="text-gray-700 dark:text-gray-300 hidden md:table-cell max-w-xs truncate">
                     {project.description}
                   </TableCell>
-                  <TableCell className="text-gray-700 dark:text-gray-300 whitespace-nowrap">
+                  {/* <TableCell className="text-gray-700 dark:text-gray-300 whitespace-nowrap">
                     {new Date(project.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
-                  </TableCell>
+                  </TableCell> */}
                   <TableCell>
                     <span className="px-2 py-1 bg-[#742774] text-white rounded text-xs whitespace-nowrap">
                       {project.platform}
                     </span>
                   </TableCell>
-                  <TableCell>
+                  {/* <TableCell>
                     {project.github ? (<a
                       href={project.github}
                       target="_blank"
@@ -188,7 +268,7 @@ export function ProjectsPage() {
                     >
                       <ExternalLink className="w-4 h-4" />
                     </a>) : ('—')}
-                  </TableCell>
+                  </TableCell> */}
                   <TableCell>
                     <button
                       onClick={() => setSelectedProject(project)}
@@ -226,13 +306,13 @@ export function ProjectsPage() {
                   {project.description}
                 </p>
 
-                <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 mb-4">
+                {/* <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 mb-4">
                   <Calendar className="w-4 h-4" />
                   <span>{new Date(project.date).toLocaleDateString()}</span>
-                </div>
+                </div> */}
 
                 <div className="flex items-center gap-3 pt-4 border-t border-gray-200 dark:border-gray-700">
-                  <a
+                  {/* <a
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -240,7 +320,7 @@ export function ProjectsPage() {
                   >
                     <ExternalLink className="w-4 h-4" />
                     <span>GitHub</span>
-                  </a>
+                  </a> */}
 
                   <button
                     onClick={() => setSelectedProject(project)}

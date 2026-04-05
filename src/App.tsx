@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import { ThemeProvider } from './components/ThemeContext';
 import { TopNav } from './components/TopNav';
 import { Sidebar } from './components/Sidebar';
@@ -9,25 +10,7 @@ import { ArticlesPage } from './components/ArticlesPage';
 import { CredentialsPage } from './components/CredentialPage';
 
 function App() {
-  const [activePage, setActivePage] = useState('projects');
   const [sidebarOpen, setSidebarOpen] = useState(true);
-
-  const renderPage = () => {
-    switch (activePage) {
-      case 'profile':
-        return <ProfilePage />;
-      case 'projects':
-        return <ProjectsPage />;
-      case 'credentials':
-        return <CredentialsPage />;
-      case 'resume':
-        return <ResumePage />;
-      case 'articles':
-        return <ArticlesPage />;
-      default:
-        return <ProjectsPage />;
-    }
-  };
 
   return (
     <ThemeProvider>
@@ -36,14 +19,20 @@ function App() {
 
         <div className="flex flex-1 overflow-hidden">
           <Sidebar
-            activePage={activePage}
-            onPageChange={setActivePage}
             isOpen={sidebarOpen}
             onClose={() => setSidebarOpen(false)}
           />
 
           <main className="flex-1 overflow-y-auto bg-white dark:bg-[#201f1e]">
-            {renderPage()}
+            <Routes>
+              <Route path="/" element={<Navigate to="/projects" replace />} />
+              <Route path="/profile" element={<ProfilePage />} />
+              <Route path="/projects" element={<ProjectsPage />} />
+              <Route path="/credentials" element={<CredentialsPage />} />
+              <Route path="/resume" element={<ResumePage />} />
+              <Route path="/articles" element={<ArticlesPage />} />
+              <Route path="*" element={<Navigate to="/projects" replace />} />
+            </Routes>
           </main>
         </div>
 
