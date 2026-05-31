@@ -42,7 +42,7 @@ import ribbon from '../assets/ribbon.mp4';
 // @ts-ignore: import of media asset without type declaration
 import email_notif_inventory from '../assets/email_notif_inventory.mp4';
 // @ts-ignore: import of media asset without type declaration
-import ai_builder from '../assets/AI_builder_automation';
+import ai_builder from '../assets/AI_builder_automation.mp4';
 
 interface Project {
   id: string;
