@@ -43,7 +43,8 @@ import ribbon from '../assets/ribbon.mp4';
 import email_notif_inventory from '../assets/email_notif_inventory.mp4';
 // @ts-ignore: import of media asset without type declaration
 import ai_builder from '../assets/AI_builder_automation.mp4';
-
+// @ts-ignore: import of media asset without type declaration
+import product_catalogue from '../assets/Product_Catalogue.mp4';
 interface Project {
   id: string;
   name: string;
@@ -65,9 +66,17 @@ export function ProjectsPage() {
       id: '12',
       name: 'AI Builder automation with sharepoint integration',
       description: 'A power automate flow that integrates sharepoint with AI Builder to track payments in a school system. The AI processes the receipts and matches it with the invoices and reconciles payments in sharepoint',
-      date: '2026-04-15',
+      date: '2026-05-30',
       platform: 'Power Automate, Sharepoint, AI Builder',
       videoUrl:ai_builder,
+    },
+     {
+      id: '13',
+      name: 'Power Pages Product Catalogue Site',
+      description: 'A product catalogue created using Power Pages with a Dataverse backend to manage products, categories and inventory. It is built specifically for a pharmaceutical company to allow for contacts to buy products from the store and get approval and dispatch from an admin user.',
+      date: '2026-04-15',
+      platform: 'Power Pages',
+      videoUrl:product_catalogue,
     },
     {
       id: '1',
