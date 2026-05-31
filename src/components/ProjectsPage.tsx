@@ -41,6 +41,8 @@ import role_hierarchy from '../assets/role_hierarchy.mp4';
 import ribbon from '../assets/ribbon.mp4';
 // @ts-ignore: import of media asset without type declaration
 import email_notif_inventory from '../assets/email_notif_inventory.mp4';
+// @ts-ignore: import of media asset without type declaration
+import ai_builder from '../assets/AI_builder_automation';
 
 interface Project {
   id: string;
@@ -59,6 +61,14 @@ export function ProjectsPage() {
   const [viewMode, setViewMode] = useState<'table' | 'cards'>('table');
 
   const projects: Project[] = [
+    {
+      id: '12',
+      name: 'AI Builder automation with sharepoint integration',
+      description: 'A power automate flow that integrates sharepoint with AI Builder to track payments in a school system. The AI processes the receipts and matches it with the invoices and reconciles payments in sharepoint',
+      date: '2026-04-15',
+      platform: 'Power Automate, Sharepoint, AI Builder',
+      videoUrl:ai_builder,
+    },
     {
       id: '1',
       name: 'Hospital Triage Dashboard',
@@ -123,6 +133,7 @@ export function ProjectsPage() {
       platform: 'Power Automate',
       videoUrl:consent_tracker,
     },
+
         {
       id: '9',
       name: 'Purchase Order Creator',
@@ -146,7 +157,8 @@ export function ProjectsPage() {
       date: '2024-12-15',
       platform: 'Model Driven Apps',
       videoUrl: ribbon,
-    },
+    }
+
   ];
 
   const filteredProjects = projects.filter(project => {
